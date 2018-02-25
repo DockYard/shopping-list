@@ -8,6 +8,14 @@ module.exports = function(defaults) {
       packages: [
         '@orbit/indexeddb'
       ]
+    },
+
+    'asset-cache': {
+      exclude: [
+        '**/*.map',
+        'assets/test-support.*',
+        'assets/tests.js'
+      ]
     }
   });
 
