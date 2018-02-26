@@ -10,6 +10,10 @@ module.exports = function(defaults) {
       ]
     },
 
+    'ember-service-worker': {
+      versionStrategy: 'every-build'
+    },
+
     'asset-cache': {
       exclude: [
         '**/*.map',
