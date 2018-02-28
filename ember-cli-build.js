@@ -11,7 +11,8 @@ module.exports = function(defaults) {
     },
 
     'ember-service-worker': {
-      versionStrategy: 'every-build'
+      versionStrategy: 'every-build',
+      registrationStrategy: 'inline'
     },
 
     'asset-cache': {
