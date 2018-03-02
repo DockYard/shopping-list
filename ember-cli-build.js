@@ -10,12 +10,31 @@ module.exports = function(defaults) {
       ]
     },
 
+    fingerprint: {
+      extensions: [
+        'js',
+        'css',
+        'png',
+        'webmanifest'
+      ],
+      replaceExtensions: [
+        'html',
+        'css',
+        'js',
+        'webmanifest'
+      ]
+    },
+
     'ember-service-worker': {
       versionStrategy: 'every-build',
       registrationStrategy: 'inline'
     },
 
     'asset-cache': {
+      include: [
+        'assets/**/*',
+        'manifest*.webmanifest',
+      ],
       exclude: [
         '**/*.map',
         'assets/test-support.*',
