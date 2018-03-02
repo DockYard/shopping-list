@@ -9,6 +9,8 @@
 
     {{content-for "head"}}
 
+    <link integrity="" rel="preload" as="script" href="{{rootURL}}assets/vendor.js">
+    <link integrity="" rel="preload" as="script" href="{{rootURL}}assets/smart-shopping-list.js">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/smart-shopping-list.css">
 
@@ -17,8 +19,17 @@
   <body>
     {{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/smart-shopping-list.js"></script>
+    <script defer>
+      [
+        "{{rootURL}}assets/vendor.js",
+        "{{rootURL}}assets/smart-shopping-list.js"
+      ].forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+      })
+    </script>
 
     {{content-for "body-footer"}}
   </body>
